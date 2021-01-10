@@ -1,7 +1,7 @@
 import express from 'express';
 import {
  /* getMovies, getMovie, */ getMovieReviews, getGenres
-} from '../tmdb-api';
+} from '../movie-api';
 
 import movieModel from './movieModel';
 

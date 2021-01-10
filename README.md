@@ -1,2 +1,2 @@
 # WebApp2-Assignment2
-The second assignment for application development 2 using react, node and mongo to create a web application
+The second assignment for application development 2 integrating assignment one react app with movies-api
