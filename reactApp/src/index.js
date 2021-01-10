@@ -6,7 +6,9 @@ import HomePage from "./pages/homePage";
 import MoviePage from './pages/movieDetailsPage'
 import FavoriteMoviesPage from "./pages/favoriteMoviesPage";
 import MovieReviewPage from "./pages/movieReviewPage";
-import SiteHeader from './components/siteHeader'
+
+import SiteHeader from '../src/components/siteHeader';
+
 import UpcomingMoviesPage from './pages/upcomingMoviesPage';
 import TopRatedMoviesPage from './pages/topRatedPage';
 import MoviesContextProvider from "./contexts/moviesContext";
@@ -16,8 +18,8 @@ import AddMovieReviewPage from './pages/addMovieReviewPage'
 import WatchListPage from "./pages/watchListPage";
 import PopularMoviesPage from "./pages/popularMoviesPage";
 import 'semantic-ui-css/semantic.min.css'
-import AuthContextProvider from "./components/authHeader";
-import AuthHeader from "./contexts/authContext";
+import AuthContextProvider from "./contexts/authContext";
+
 import LoginPage from "./pages/loginPage";
 import SignUpPage from "./pages/signUpPage";
 
@@ -27,7 +29,6 @@ const App = () => {
    <BrowserRouter>
       <div className="jumbotron  bg-dark">
         <SiteHeader /> 
-        <AuthHeader />
         <div className="container-fluid  bg-secondry">
           <MoviesContextProvider>
           <SimilarContextProvider>
