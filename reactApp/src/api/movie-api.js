@@ -29,7 +29,7 @@ export const getMovies = () => {
   
 export const getMovie = id => {
   return fetch(
-     '/api/movie/'+{id},{headers: {
+     '/api/movies/'+id,{headers: {
        'Authorization': window.localStorage.getItem('token')
     }
   }
@@ -44,7 +44,6 @@ export const getGenres = () => {
     }
   }
   ).then(res => res.json())
-   .then(json => json.results);
 };
 
 export const getMovieReviews = id => {
@@ -64,7 +63,6 @@ export const getUpcomingMovies = () => {
     }
   }
   ).then(res => res.json())
-   .then(json => json.results);
 };
 
   export const getPopularMovies = () =>{
@@ -74,18 +72,16 @@ export const getUpcomingMovies = () => {
      }
    }
    ).then(res => res.json())
-      .then(json => json.results);
   };
 
 
   export const getTopRated = () =>{
     return fetch(
-      '/api/top_rated',{headers: {
+      '/api/topRated',{headers: {
         'Authorization': window.localStorage.getItem('token')
      }
    }
    ).then(res => res.json())
-      .then(json => json.results);
   };
 
   export const getSimilarMovies = id =>{
@@ -96,5 +92,4 @@ export const getUpcomingMovies = () => {
    }
    )
     .then(res => res.json())
-    .then(json => json.results);
   };

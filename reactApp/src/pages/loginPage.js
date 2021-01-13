@@ -5,20 +5,31 @@ import { Link } from "react-router-dom";
 
 const LoginPage = props => {
   const context = useContext(AuthContext)
+  context.isAuthenticated = false;
+  
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
+   // Set 'from' to path where browser is redirected after a successful login.
+  // Either / or the protected path user tried to access.
+
+  const { from } = props.location.state || { from: { pathname: "/" } };
+  
   const login = () => {
     context.authenticate(userName, password);
+
+    if (context.isAuthenticated === true) {
+      return <Redirect to={from} />;
+    }
   };
 
-  // Set 'from' to path where browser is redirected after a successful login.
-  // Either / or the protected path user tried to access.
-  const { from } = props.location.state || { from: { pathname: "/" } };
 
+
+  //context.authenticate(userName, password);
   if (context.isAuthenticated === true) {
     return <Redirect to={from} />;
   }
+
   return (
     <>
       <h2>Login page</h2>

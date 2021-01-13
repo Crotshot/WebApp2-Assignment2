@@ -10,7 +10,7 @@ const SignUpPage = props => {
   const [registered, setRegistered] = useState(false);
 
   const register = () => {
-    if (password.length > 0 && password === passwordAgain) {
+    if (password.length > 0 && password === passwordAgain && userName.length  > 0) {
       context.register(userName, password);
       setRegistered(true);
     }

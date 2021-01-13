@@ -20,10 +20,10 @@ router.post('/', async (req, res, next) => {
   }
   if (req.query.action === 'register') {
     if(req.body.password.value.match(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5,}$/)){
-    await User.create(req.body).catch(next);
+      await User.create(req.body).catch(next);
       res.status(201).json({
         code: 201,
-       msg: 'Successful created new user.',
+        msg: 'Successful created new user.',
       });
     }
     else{
