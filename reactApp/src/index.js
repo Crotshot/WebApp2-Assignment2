@@ -22,6 +22,7 @@ import SignUpPage from "./pages/signUpPage";
 import {ProtectedRoute} from './ProtectedRoute';
 
 const App = () => {
+  localStorage.removeItem('token');
   return (
    <BrowserRouter>
       <div className="jumbotron  bg-dark">
@@ -32,7 +33,7 @@ const App = () => {
           <SimilarContextProvider>
           <GenresContextProvider>
               <Switch>
-                <Route path="/login" component={LoginPage} />
+                <Route path="/login" component={LoginPage}/>
                 <Route path="/signup" component={SignUpPage} />
                 <ProtectedRoute exact path="/reviews/form" component={AddMovieReviewPage} />
                 <ProtectedRoute path="/reviews/:id" component={MovieReviewPage} />

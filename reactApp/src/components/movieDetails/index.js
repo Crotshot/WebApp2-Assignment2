@@ -20,17 +20,13 @@ export default ({ movie }) => {
           {movie.release_date}
         </li>
       </ul>
-      <ul className="list-group list-group-horizontal">
-        <li key="gh" className="list-group-item list-group-item-dark">
-          Genres
-        </li>
-        {movie.genres.map(g => (
-            <li key={g.name} className="list-group-item">
-            {g.name}
-            </li>
-        ))}
-      </ul>
-      <ul className="list-group list-group-horizontal">
+    </>
+  );
+};
+
+
+/*
+            <ul className="list-group list-group-horizontal">
         <li key="slh" className="list-group-item list-group-item-dark">
           Spoken Languages
         </li>
@@ -40,6 +36,15 @@ export default ({ movie }) => {
           </li>
         ))}
       </ul>
-    </>
-  );
-};
+
+            <ul className="list-group list-group-horizontal">
+        <li key="gh" className="list-group-item list-group-item-dark">
+          Genres
+        </li>
+        {movie.genre_ids.map(g => (
+            <li key={g.name} className="list-group-item">
+            {g.name}
+            </li>
+        ))}
+      </ul>
+      */

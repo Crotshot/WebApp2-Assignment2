@@ -6,10 +6,6 @@ import "./siteHeader.css";
 
 const SiteHeader = () => {
 
-  const clearT = () => {
-    window.localStorage.clear();
-  };
-
   return (
     <nav className="navbar  navbar-light fixed-top  bg-light">
       <nav className="navbar-brand text-dark">
@@ -62,11 +58,6 @@ const SiteHeader = () => {
               Watch List
             </Link>
           </li>
-            <li className="nav-item">
-             <Link onClick={clearT} className="nav-link text-dark" to="/login">
-                Log Out
-              </Link>
-           </li>
         </ul>
       </nav>
     </nav>

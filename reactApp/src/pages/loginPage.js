@@ -10,25 +10,26 @@ const LoginPage = props => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
-   // Set 'from' to path where browser is redirected after a successful login.
+  // Set 'from' to path where browser is redirected after a successful login.
   // Either / or the protected path user tried to access.
 
+  function sleep(milliseconds) {
+    const date = Date.now();
+    let currentDate = null;
+    do {
+      currentDate = Date.now();
+    } while (currentDate - date < milliseconds);
+  }
+
   const { from } = props.location.state || { from: { pathname: "/" } };
-  
-  const login = () => {
-    context.authenticate(userName, password);
-
-    if (context.isAuthenticated === true) {
-      return <Redirect to={from} />;
-    }
-  };
-
-
-
   //context.authenticate(userName, password);
   if (context.isAuthenticated === true) {
     return <Redirect to={from} />;
   }
+
+  const login = () => {
+    context.authenticate(userName, password)
+  };
 
   return (
     <>

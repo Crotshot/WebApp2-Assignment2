@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Header from "../headerMovieList";
 import {MovieListDouble,MovieListSingle} from "../movieList";
 import FilterControls from "../filterControls";
+
+const clearT = () => {
+  window.localStorage.clear();
+  window.location.assign("/");
+};
 
 export const MovieListPageTemplateDouble = ({ movies, title, action0, action1 }) => {
   const [nameFilter, setNameFilter] = useState("");
@@ -26,6 +31,7 @@ export const MovieListPageTemplateDouble = ({ movies, title, action0, action1 })
     <>
       <Header title={title} numMovies={displayedMovies.length} />
       <FilterControls onUserInput={handleChange} numMovies={displayedMovies.length}/>
+      <button onClick={clearT} className="nav-link text-dark" to="/login">Log Out</button>
       <MovieListDouble
        action0={action0}
        action1={action1}
@@ -58,6 +64,7 @@ export const MovieListPageTemplateSingle = ({ movies, title, action}) => {
     <>
       <Header title={title} numMovies={displayedMovies.length} />
       <FilterControls onUserInput={handleChange} numMovies={displayedMovies.length}/>
+      <button onClick={clearT} className="nav-link text-dark" to="/login">Log Out</button>
       <MovieListSingle
        action={action}
        movies={displayedMovies}

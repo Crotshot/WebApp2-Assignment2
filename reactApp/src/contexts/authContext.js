@@ -1,4 +1,4 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useEffect } from "react";
 import { login, signup } from "../api/movie-api";
 
 export const AuthContext = createContext(null);
@@ -20,6 +20,7 @@ const AuthContextProvider = (props) => {
     if (result.token) {
       setToken(result.token)
       setIsAuthenticated(true);
+      console.log(isAuthenticated)
       setUserName(username);
     }
   };
