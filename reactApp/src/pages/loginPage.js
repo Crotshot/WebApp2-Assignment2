@@ -4,25 +4,14 @@ import { AuthContext } from '../contexts/authContext';
 import { Link } from "react-router-dom";
 
 const LoginPage = props => {
+
   const context = useContext(AuthContext)
-  context.isAuthenticated = false;
-  
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
   // Set 'from' to path where browser is redirected after a successful login.
   // Either / or the protected path user tried to access.
-
-  function sleep(milliseconds) {
-    const date = Date.now();
-    let currentDate = null;
-    do {
-      currentDate = Date.now();
-    } while (currentDate - date < milliseconds);
-  }
-
   const { from } = props.location.state || { from: { pathname: "/" } };
-  //context.authenticate(userName, password);
   if (context.isAuthenticated === true) {
     return <Redirect to={from} />;
   }
@@ -50,3 +39,14 @@ const LoginPage = props => {
 };
 
 export default LoginPage;
+
+
+/*
+  function sleep(milliseconds) {
+    const date = Date.now();
+    let currentDate = null;
+    do {
+      currentDate = Date.now();
+    } while (currentDate - date < milliseconds);
+  }
+*/
