@@ -36,6 +36,25 @@ export const getMovie = id => {
   ).then(res => res.json());
 };
 
+export const getMovieReviews = id => {
+  return fetch(
+     `/api/movies/${id}/reviews`,{headers: {
+       'Authorization': window.localStorage.getItem('token')
+    }
+  }
+  ).then(res => res.json())
+   //.then(json => json.results);
+};
+
+export const getSimilarMovies = id =>{
+  return fetch(
+    `/api/similar/${id}`,{headers: {
+      'Authorization': window.localStorage.getItem('token')
+   }
+ }
+ ).then(res => res.json())
+// .then(json => json.results);
+};
 
 export const getGenres = () => {
   return fetch(
@@ -44,16 +63,6 @@ export const getGenres = () => {
     }
   }
   ).then(res => res.json())
-};
-
-export const getMovieReviews = id => {
-  return fetch(
-     '/api/movie/' + {id} + 'reviews',{headers: {
-       'Authorization': window.localStorage.getItem('token')
-    }
-  }
-  ).then(res => res.json())
-   .then(json => json.results);
 };
 
 export const getUpcomingMovies = () => {
@@ -82,14 +91,4 @@ export const getUpcomingMovies = () => {
      }
    }
    ).then(res => res.json())
-  };
-
-  export const getSimilarMovies = id =>{
-    return fetch(
-      '/api/movie/'+{id} + '/similar',{headers: {
-        'Authorization': window.localStorage.getItem('token')
-     }
-   }
-   )
-    .then(res => res.json())
   };

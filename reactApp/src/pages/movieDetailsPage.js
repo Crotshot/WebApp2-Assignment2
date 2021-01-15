@@ -48,6 +48,7 @@ const MoviePage = props => {
           path={`/movies/:id/reviews`}
           render={props => <MovieReviews movie={movie} {...props} />}
         />
+        
         <MovieListSingle
           action={movie => <AddReviewButton movie={movie} />}
           movies={similar}
@@ -61,3 +62,7 @@ const MoviePage = props => {
   );
 };
   export default withRouter(MoviePage);
+
+  /*
+  
+  */

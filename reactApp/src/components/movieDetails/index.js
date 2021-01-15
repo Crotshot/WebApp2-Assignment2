@@ -26,6 +26,17 @@ export default ({ movie }) => {
 
 
 /*
+      <ul className="list-group list-group-horizontal">
+        <li key="gh" className="list-group-item list-group-item-dark">
+          Genres
+        </li>
+        {movie.genre.name.map(g => (
+            <li key={g.name} className="list-group-item">
+            {g.name}
+            </li>
+        ))}
+      </ul>
+
             <ul className="list-group list-group-horizontal">
         <li key="slh" className="list-group-item list-group-item-dark">
           Spoken Languages
@@ -37,14 +48,5 @@ export default ({ movie }) => {
         ))}
       </ul>
 
-            <ul className="list-group list-group-horizontal">
-        <li key="gh" className="list-group-item list-group-item-dark">
-          Genres
-        </li>
-        {movie.genre_ids.map(g => (
-            <li key={g.name} className="list-group-item">
-            {g.name}
-            </li>
-        ))}
-      </ul>
+
       */

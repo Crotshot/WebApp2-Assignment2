@@ -96,7 +96,7 @@ const MoviesContextProvider = (props) => {
 
   useEffect(() => {
     getMovies().then((movies) => {
-      console.log(movies);
+      //console.log(movies);
       dispatch({ type: "load", payload: { movies } });
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps

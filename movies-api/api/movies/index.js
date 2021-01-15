@@ -24,13 +24,4 @@ router.get('/:id/reviews', (req, res, next) => {
   .then(reviews => res.status(200).send(reviews))
   .catch((error) => next(error));
 });
-/*
-// eslint-disable-next-line no-unused-vars
-router.get('/:id/similar', (req, res, next) => {
-  const id = parseInt(req.params.id);
-  getSimilarMovies(id)
-  .then(similar => res.status(200).send(similar))
-  .catch((error) => next(error));
-});
-*/
 export default router;
