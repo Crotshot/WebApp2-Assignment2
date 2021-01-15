@@ -18,6 +18,24 @@ export const signup = (username, password) => {
   }).then(res => res.json())
 };
 
+export const postFavourites = (username, movie, id) => {
+  return fetch(
+    `/api/user/${username}/favourites`, { headers: {
+      'Authorization': window.localStorage.getItem('token')
+    },
+    method: 'post',
+    body: JSON.stringify({ movie: movie, username: username, id: id })
+  }  ).then(res => res.json());
+};
+
+export const getFavourites = userName => {
+  return fetch(
+    `/api/user/${userName}/favourites`, { headers: {
+      'Authorization': window.localStorage.getItem('token')
+    }}
+  ).then(res => res.json());
+};
+
 export const getMovies = () => {
   return fetch(
      '/api/movies',{headers: {

@@ -34,12 +34,17 @@ const AuthContextProvider = (props) => {
     setTimeout(() => setIsAuthenticated(false), 100);
   }
 
+  const getUsername = () => {
+    return userName;
+  }
+
   return (
     <AuthContext.Provider
       value={{
         isAuthenticated,
         authenticate,
         register,
+        getUsername,
         signout,
         userName
       }}
