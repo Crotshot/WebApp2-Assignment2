@@ -60,11 +60,11 @@ app.use(errHandler);
 
 //Users router
 app.use('/api/users', usersRouter);
-app.use('/api/movies',/* passport.authenticate('jwt', {session: false}),*/ moviesRouter);
-app.use('/api/genres',/* passport.authenticate('jwt', {session: false}), */genresRouter);
-app.use('/api/topRated',/* passport.authenticate('jwt', {session: false}),*/ topRatedRouter);
-app.use('/api/upcoming',/* passport.authenticate('jwt', {session: false}),*/ upcomingRouter);
-app.use('/api/popular',/* passport.authenticate('jwt', {session: false}),*/ popularRouter);
+app.use('/api/movies', passport.authenticate('jwt', {session: false}), moviesRouter);
+app.use('/api/genres', passport.authenticate('jwt', {session: false}), genresRouter);
+app.use('/api/topRated', passport.authenticate('jwt', {session: false}), topRatedRouter);
+app.use('/api/upcoming', passport.authenticate('jwt', {session: false}), upcomingRouter);
+app.use('/api/popular', passport.authenticate('jwt', {session: false}), popularRouter);
 
 app.listen(port, () => {
   console.info(`Server running at ${port}`);
