@@ -91,7 +91,10 @@ export default router;
 
 ## Extra features
 
-There are no extra features in this application.
+Upcoming movie page that displays upcoming movies.
+Toprated movie page that displays the toprated movies.
+Popular movies page that displays the popular movies.
+Movie details page (Not functioning)
 
 ## Independent learning.
 
